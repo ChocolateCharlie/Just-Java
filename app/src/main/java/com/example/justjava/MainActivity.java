@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
  * @param view
  *
  * This method is called when the order button is clicked.
- * Display a message.
+ * Display the price.
  */
     public void submitOrder(View view) {
-        String priceMessage = "Free";
+        String priceMessage = "$" + (quantity * 5);
         displayMessage(priceMessage);
     }
 
