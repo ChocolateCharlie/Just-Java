@@ -37,10 +37,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = 2;
-
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+        displayPrice(quantity * 5);
     }
 
     /**
@@ -64,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         quantity = quantity + 1;
+
         display(quantity);
     }
 
@@ -71,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-        quantity = quantity - 1;
+        if (quantity != 0)
+        {
+            quantity = quantity - 1;
+        }
+
         display(quantity);
     }
 }
