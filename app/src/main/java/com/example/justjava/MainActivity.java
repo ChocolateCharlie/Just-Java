@@ -1,10 +1,8 @@
 /**
- * IMPORTANT: Make sure you are using the correct package name.
- * This example uses the package name:
- * package com.example.android.justjava
- * If you get an error when copying this code into Android studio, update it to match the package name found
- * in the project's AndroidManifest.xml file.
- **/
+ * MainActivity.java
+ * By : ChocolateCharlie
+ * Last Updates : 02 - 01 - 2018
+ */
 
 package com.example.justjava;
 
@@ -17,57 +15,85 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+
+
 /**
- * This app displays an order form to order coffee.
+ * MainActivity class
+ * @author ChocolateCharlie
+ *
+ * Display an order form to order coffee :
+ * - choose number of cups with two buttons (+ and -)
+ * - show price each time the order button is pressed
  */
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * Declare and initialize the quantity variable : number of cups
-     */
-    int quantity = 2;
+    int quantity = 2;   /* The number of cups */
 
+/**
+ * onCreate
+ * @param savedInstanceState
+ *
+ * This method is called at the creation of the class.
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    /**
-     * This method is called when the order button is clicked.
-     */
+/**
+ * submitOrder
+ * @param view
+ *
+ * This method is called when the order button is clicked.
+ * Update the displayed price.
+ */
     public void submitOrder(View view) {
         displayPrice(quantity * 5);
     }
 
-    /**
-     * This method displays the given quantity value on the screen.
-     */
+/**
+ * display
+ * @param number
+ *
+ * This method displays the given quantity value on the screen.
+ */
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * This method displays the given price on the screen.
-     */
+/**
+ * displayPrice
+ * @param number
+ *
+ * This method displays the given price on the screen.
+ */
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-    /**
-     * This method is called when the plus button is clicked.
-     */
+/**
+ * increment
+ * @param view
+ *
+ * This method is called when the plus button is clicked.
+ * Increment quantity (global variable for the number of cups).
+ */
     public void increment(View view) {
         quantity = quantity + 1;
 
         display(quantity);
     }
 
-    /**
-     * This method is called when the minus button is clicked.
-     */
+/**
+ * decrement
+ * @param view
+ *
+ * This method is called when the minus button is clicked.
+ * Decrement quantity (global variable for the number of cups).
+ */
     public void decrement(View view) {
         if (quantity != 0)
         {
