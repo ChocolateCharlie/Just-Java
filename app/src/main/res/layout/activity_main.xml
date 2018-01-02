@@ -2,7 +2,7 @@
 
 <!-- JUST JAVA LAYOUT -->
 <!-- By : ChocolateCharlie -->
-<!-- Last Updated : 01 - 01 - 2018 -->
+<!-- Last Updated : 02 - 01 - 2018 -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,10 +22,29 @@
         android:textColor="@android:color/darker_gray"
         android:textAllCaps="true" />
 
-<!-- Number -->
+<!-- Quantity Number -->
     <TextView
-        android:id="@+id/quantity-text-view"
+        android:id="@+id/quantity_text_view"
         android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+
+<!-- Price -->
+    <TextView
+        android:text="Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/darker_gray"
+        android:textAllCaps="true" />
+
+<!-- Price Number -->
+    <TextView
+        android:id="@+id/price_text_view"
+        android:text="$0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
