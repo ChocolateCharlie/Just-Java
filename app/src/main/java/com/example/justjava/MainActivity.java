@@ -1,7 +1,7 @@
 /**
  * MainActivity.java
  * By : ChocolateCharlie
- * Last Updates : 02 - 01 - 2018
+ * Last Updates : 03 - 01 - 2018
  */
 
 package com.example.justjava;
@@ -21,13 +21,16 @@ import java.text.NumberFormat;
  * MainActivity class
  * @author ChocolateCharlie
  *
- * Display an order form to order coffee :
- * - choose number of cups with two buttons (+ and -)
- * - show price each time the order button is pressed
+ * Coffee machine :
+ * - choose a drink pressing buttons (default is coffee)
+ * - ajust number of sugar teaspoons desired (default is 0)
+ * - show price
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 2;   /* The number of cups */
+    int price = 5;      /* The price */
+    int teaspoons = 0;  /* The number of sugar teaspoons */
+    String drink = "Coffee"; /* The drink */
 
 /**
  * onCreate
@@ -42,76 +45,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
 /**
- * submitOrder
- * @param view
- *
- * This method is called when the order button is clicked.
- * Display the price.
- */
-    public void submitOrder(View view) {
-        String priceMessage = "Total : $" + (quantity * 5) + "\nThank you !";
-        displayMessage(priceMessage);
-    }
-
-/**
- * display
+ * displayTeaspoons
  * @param number
  *
- * This method displays the given quantity value on the screen.
+ * This method displays the number of teaspoons.
  */
-    private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+    private void displayTeaspoons(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.teaspoons_text_view);
         quantityTextView.setText("" + number);
     }
 
 /**
  * displayPrice
- * @param number
- *
- * This method displays the given price on the screen.
- */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-/**
- * displayMessage
  * @param message
  *
- * This method displays the given text on the screen.
+ * This method displays price.
  */
-    private void displayMessage(String message) {
+    private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
     }
 
 /**
- * increment
+ * incrementSugar
  * @param view
  *
  * This method is called when the plus button is clicked.
- * Increment quantity (global variable for the number of cups).
+ * Increment teaspoons (global variable).
  */
-    public void increment(View view) {
-        quantity = quantity + 1;
+    public void incrementSugar(View view) {
+        if (teaspoons != 5)
+        {
+            teaspoons = teaspoons + 1;
+            price = price + 1;
+        }
 
-        display(quantity);
+        displayTeaspoons(teaspoons);
+        displayPrice("$" + price);
     }
 
 /**
- * decrement
+ * decrementSugar
  * @param view
  *
  * This method is called when the minus button is clicked.
- * Decrement quantity (global variable for the number of cups).
+ * Decrement teaspoons (global variable).
  */
-    public void decrement(View view) {
-        if (quantity != 0)
+    public void decrementSugar(View view) {
+        if (teaspoons != 0)
         {
-            quantity = quantity - 1;
+            teaspoons = teaspoons - 1;
+            price = price - 1;
         }
 
-        display(quantity);
+        displayTeaspoons(teaspoons);
+        displayPrice("$" + price);
     }
 }
