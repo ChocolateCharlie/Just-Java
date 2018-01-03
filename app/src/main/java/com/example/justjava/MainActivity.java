@@ -101,4 +101,70 @@ public class MainActivity extends AppCompatActivity {
         displayTeaspoons(teaspoons);
         displayPrice("$" + price);
     }
+
+/**
+ * chooseCoffee
+ * @param view
+ *
+ * This method is called when the coffee button is clicked.
+ * - change the drink (global variable) name
+ * - update price
+ */
+    public void chooseCoffee(View view) {
+        drink = "Coffee";
+
+        price = 5 + teaspoons;
+
+        displayPrice("$" + price);
+    }
+
+/**
+ * chooseCappuccino
+ * @param view
+ *
+ * This method is called when the cappuccino button is clicked.
+ * - change the drink (global variable) name
+ * - update price
+ */
+    public void chooseCappuccino(View view) {
+        drink = "Cappuccino";
+
+        price = 12 + teaspoons;
+
+        displayPrice("$" + price);
+    }
+
+/**
+ * chooseChocolate
+ * @param view
+ *
+ * This method is called when the hot chocolate button is clicked.
+ * - change the drink (global variable) name
+ * - update price
+ */
+    public void chooseChocolate(View view) {
+        drink = "Chocolate";
+
+        price = 6 + teaspoons;
+
+        displayPrice("$" + price);
+    }
+
+/**
+ * chooseSoup
+ * @param view
+ *
+ * This method is called when the soup button is clicked.
+ * - change the drink (global variable) name
+ * - update price
+ */
+    public void chooseSoup(View view) {
+        drink = "Soup";
+        teaspoons = 0;
+
+        price = 12 + teaspoons;
+
+        displayPrice("$" + price);
+        displayTeaspoons(teaspoons);
+    }
 }
