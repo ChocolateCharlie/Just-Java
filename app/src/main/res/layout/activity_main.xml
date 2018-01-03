@@ -140,7 +140,6 @@
 
             </LinearLayout>
 
-
         <!-- Price section title -->
             <TextView
                 android:text="Price"
@@ -169,12 +168,22 @@
 
     </LinearLayout>
 
+<!-- Order button -->
     <Button
         android:text="Order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16sp"
+        android:layout_margin="16dp"
         android:textSize="24sp"
         android:onClick="submitOrder"/>
+
+    <TextView
+        android:id="@+id/order_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="monospace"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"/>
 
 </LinearLayout>
