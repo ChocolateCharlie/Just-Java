@@ -9,156 +9,172 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.example.justjava.MainActivity" >
 
-<!-- Drinks section -->
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <!-- Drinks section title -->
-        <TextView
-            android:text="Drinks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            android:textAllCaps="true"/>
-
-    <!-- Coffee button -->
-        <Button
-            android:text="Coffee"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_margin="4dp"
-            android:onClick="chooseCoffee"/>
-
-    <!-- Cappuccino button -->
-        <Button
-            android:text="Cappuccino"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_margin="4dp"
-            android:onClick="chooseCappuccino"/>
-
-    <!-- Hot chocolate -->
-        <Button
-            android:text="Hot chocolate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_margin="4dp"
-            android:onClick="chooseChocolate"/>
-
-        <!-- Soup button -->
-        <Button
-            android:text="Soup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_margin="4dp"
-            android:onClick="chooseSoup"/>
-
-    </LinearLayout>
-
-<!-- Sugar and Price sections -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
-
-    <!-- Sugar section title -->
-        <TextView
-            android:text="Sugar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            android:textAllCaps="true"/>
-
-    <!-- Sugar picker -->
+    <!-- Drinks section -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
-        <!-- Less sugar button -->
-            <Button
-                android:text="-"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="0.5"
-                android:textAllCaps="true"
-                android:padding="4dp"
-                android:layout_margin="4dp"
-                android:onClick="decrementSugar"/>
-
-        <!-- Current sugar teaspoons -->
+        <!-- Drinks section title -->
             <TextView
-                android:id="@+id/teaspoons_text_view"
-                android:text="0"
-                android:layout_width="0dp"
+                android:text="Drinks"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:textAlignment="center"
-                android:textSize="16sp"
-                android:textColor="@android:color/black" />
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:textAllCaps="true"/>
 
-        <!-- More sugar button -->
+        <!-- Coffee button -->
             <Button
-                android:text="+"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="0.5"
-                android:textAllCaps="true"
+                android:text="Coffee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="4dp"
                 android:layout_margin="4dp"
-                android:onClick="incrementSugar"/>
+                android:onClick="chooseCoffee"/>
+
+        <!-- Cappuccino button -->
+            <Button
+                android:text="Cappuccino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:onClick="chooseCappuccino"/>
+
+        <!-- Hot chocolate -->
+            <Button
+                android:text="Hot chocolate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:onClick="chooseChocolate"/>
+
+            <!-- Soup button -->
+            <Button
+                android:text="Soup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:onClick="chooseSoup"/>
 
         </LinearLayout>
 
+    <!-- Sugar and Price sections -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
-    <!-- Price section title -->
-        <TextView
-            android:text="Price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            android:textAllCaps="true"/>
+        <!-- Sugar section title -->
+            <TextView
+                android:text="Sugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:textAllCaps="true"/>
 
-    <!-- Price -->
-        <TextView
-            android:id="@+id/price_text_view"
-            android:text="$5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:fontFamily="monospace"
-            android:textSize="36sp"
-            android:textColor="@android:color/black" />
+        <!-- Sugar picker -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+            <!-- Less sugar button -->
+                <Button
+                    android:text="-"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.5"
+                    android:textAllCaps="true"
+                    android:padding="4dp"
+                    android:layout_margin="4dp"
+                    android:onClick="decrementSugar"/>
+
+            <!-- Current sugar teaspoons -->
+                <TextView
+                    android:id="@+id/teaspoons_text_view"
+                    android:text="0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+            <!-- More sugar button -->
+                <Button
+                    android:text="+"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.5"
+                    android:textAllCaps="true"
+                    android:padding="4dp"
+                    android:layout_margin="4dp"
+                    android:onClick="incrementSugar"/>
+
+            </LinearLayout>
+
+
+        <!-- Price section title -->
+            <TextView
+                android:text="Price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
+                android:textAllCaps="true"/>
+
+        <!-- Price -->
+            <TextView
+                android:id="@+id/price_text_view"
+                android:text="$5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="monospace"
+                android:textSize="36sp"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
+    <Button
+        android:text="Order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:textSize="24sp"
+        android:onClick="submitOrder"/>
 
 </LinearLayout>
