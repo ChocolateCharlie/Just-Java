@@ -156,13 +156,14 @@ public class MainActivity extends AppCompatActivity {
  *
  * This method is called when the soup button is clicked.
  * - change the drink (global variable) name
+ * - reset sugar to zero
  * - update price
  */
     public void chooseSoup(View view) {
         drink = "Soup";
         teaspoons = 0;
 
-        price = 12 + teaspoons;
+        price = 2 + teaspoons;
 
         displayPrice("$" + price);
         displayTeaspoons(teaspoons);
