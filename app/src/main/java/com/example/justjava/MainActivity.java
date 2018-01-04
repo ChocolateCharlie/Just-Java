@@ -49,8 +49,19 @@ public class MainActivity extends AppCompatActivity {
  * Display the price.
  */
     public void submitOrder(View view) {
-        String priceMessage = "Total : $" + (quantity * 5) + "\nThank you !";
+        int price = calculatePrice(quantity);
+        String priceMessage = "Total : $" + price + "\nThank you !";
         displayMessage(priceMessage);
+    }
+
+/**
+ *  calculatePrice
+ *  @param quantity is the number of cups of coffee ordered
+ *
+ *  Calculates the price of the order.
+ */
+    private int calculatePrice(int quantity) {
+        return (quantity * 5);
     }
 
 /**
