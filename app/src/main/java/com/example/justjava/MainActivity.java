@@ -1,7 +1,7 @@
 /**
  * MainActivity.java
  * By : ChocolateCharlie
- * Last Updates : 02 - 01 - 2018
+ * Last Updates : 04 - 01 - 2018
  */
 
 package com.example.justjava;
@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 /**
- * display
+ * displayQuantity
  * @param number
  *
  * This method displays the given quantity value on the screen.
  */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         quantity = quantity + 1;
 
-        display(quantity);
+        displayQuantity(quantity);
     }
 
 /**
@@ -112,6 +112,6 @@ public class MainActivity extends AppCompatActivity {
             quantity = quantity - 1;
         }
 
-        display(quantity);
+        displayQuantity(quantity);
     }
 }
