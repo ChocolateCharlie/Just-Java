@@ -1,7 +1,7 @@
 /**
  * MainActivity.java
  * By : ChocolateCharlie
- * Last Updates : 04 - 01 - 2018
+ * Last Updates : 05 - 01 - 2018
  */
 
 package com.example.justjava;
@@ -49,18 +49,17 @@ public class MainActivity extends AppCompatActivity {
  * Display the price.
  */
     public void submitOrder(View view) {
-        int price = calculatePrice(quantity);
+        int price = calculatePrice();
         String priceMessage = "Total : $" + price + "\nThank you !";
         displayMessage(priceMessage);
     }
 
 /**
  *  calculatePrice
- *  @param quantity is the number of cups of coffee ordered
  *
  *  Calculates the price of the order.
  */
-    private int calculatePrice(int quantity) {
+    private int calculatePrice() {
         return (quantity * 5);
     }
 
