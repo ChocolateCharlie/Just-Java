@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -80,10 +81,11 @@ public class MainActivity extends AppCompatActivity {
  *      - a thanking message
  */
     private String createOrderSummary (int price) {
+        EditText customersName = (EditText) findViewById(R.id.name_edit_text);
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
 
-        return "Name : Kaptain Koffee\nAdd whipped cream ? " + whippedCreamCheckBox.isChecked() + "\nAdd chocolate ? " + chocolateCheckBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
+        return "Name : " + customersName.getText().toString() + "\nAdd whipped cream ? " + whippedCreamCheckBox.isChecked() + "\nAdd chocolate ? " + chocolateCheckBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
     }
 
 /**

@@ -18,6 +18,14 @@
         android:layout_margin="8dp"
         android:orientation="vertical" >
 
+    <!-- EditText -->
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords" />
+
     <!-- Toppings -->
         <TextView
             android:text="Toppings"
