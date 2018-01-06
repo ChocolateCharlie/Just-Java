@@ -57,20 +57,39 @@ public class MainActivity extends AppCompatActivity {
  *      - a thanking message
  */
     public void submitOrder(View view) {
-        displayMessage(createOrderSummary(calculatePrice()));
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+
+        displayMessage(createOrderSummary(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked(), calculatePrice(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked())));
     }
 
 /**
  *  calculatePrice
+ *  @param hasWhippedCream
+ *  @param hasChocolate
  *
  *  Calculates the price of the order.
  */
-    private int calculatePrice() {
-        return (quantity * 5);
+    private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate) {
+        int price = quantity * 5;
+
+        if (hasWhippedCream)
+        {
+            price += 1;
+        }
+
+        if (hasChocolate)
+        {
+            price += 2;
+        }
+
+        return (price);
     }
 
 /**
  * createOrderSummary
+ * @param hasWhippedCream
+ * @param hasChocolate
  * @param price
  * @return a String with :
  *      - the customer's name
@@ -80,12 +99,10 @@ public class MainActivity extends AppCompatActivity {
  *      - the price
  *      - a thanking message
  */
-    private String createOrderSummary (int price) {
+    private String createOrderSummary (boolean hasWhippedCream, boolean hasChocolate, int price) {
         EditText customersName = (EditText) findViewById(R.id.name_edit_text);
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
 
-        return "Name : " + customersName.getText().toString() + "\nAdd whipped cream ? " + whippedCreamCheckBox.isChecked() + "\nAdd chocolate ? " + chocolateCheckBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
+        return "Name : " + customersName.getText().toString() + "\nAdd whipped cream ? " + hasWhippedCream + "\nAdd chocolate ? " + hasChocolate + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
     }
 
 /**
