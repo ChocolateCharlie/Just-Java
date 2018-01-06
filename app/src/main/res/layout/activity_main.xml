@@ -24,6 +24,7 @@
 
 <!-- Whipped Cream Checkbox -->
     <CheckBox
+        android:id="@+id/whipped_cream_checkbox"
         android:text="Whipped Cream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

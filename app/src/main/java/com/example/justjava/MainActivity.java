@@ -1,7 +1,7 @@
 /**
  * MainActivity.java
  * By : ChocolateCharlie
- * Last Updates : 05 - 01 - 2018
+ * Last Updates : 06 - 01 - 2018
  */
 
 package com.example.justjava;
@@ -11,6 +11,7 @@ package com.example.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -75,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
  *      - a thanking message
  */
     private String createOrderSummary (int price) {
-        return "Name : Kaptain Koffee\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
+        CheckBox checkBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+
+        return "Name : Kaptain Koffee\nHas whipped cream ? " + checkBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
     }
 
 /**
