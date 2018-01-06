@@ -2,7 +2,7 @@
 
 <!-- JUST JAVA LAYOUT -->
 <!-- By : ChocolateCharlie -->
-<!-- Last Updated : 05 - 01 - 2018 -->
+<!-- Last Updated : 06 - 01 - 2018 -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,6 +12,23 @@
     android:layout_margin="8dp"
     android:orientation="vertical"
     tools:context="com.example.justjava.MainActivity" >
+
+<!-- Toppings -->
+    <TextView
+        android:text="Toppings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/darker_gray"
+        android:textAllCaps="true" />
+
+<!-- Whipped Cream Checkbox -->
+    <CheckBox
+        android:text="Whipped Cream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:textSize="16sp" />
 
 <!-- Quantity -->
     <TextView
