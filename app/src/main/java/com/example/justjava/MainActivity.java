@@ -9,6 +9,7 @@ package com.example.justjava;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
  * @param view
  *
  * This method is called when the order button is clicked.
- * Display :
+ * Send an email with :
  *      - the customer's name
  *      - if whipped cream must be added
  *      - if chocolate must be added
@@ -60,10 +61,20 @@ public class MainActivity extends AppCompatActivity {
  *      - a thanking message
  */
     public void submitOrder(View view) {
+        EditText customersName = (EditText) findViewById(R.id.name_edit_text);
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
 
-        displayMessage(createOrderSummary(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked(), calculatePrice(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked())));
+        String subject = "JustJava order for " + customersName.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked(), calculatePrice(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked())));
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
     }
 
 /**
