@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
  * Decrement quantity (global variable for the number of cups).
  */
     public void decrement(View view) {
-        if (quantity > 0)
+        if (quantity > 1)
         {
             quantity = quantity - 1;
         }
