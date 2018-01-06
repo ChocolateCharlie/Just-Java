@@ -8,12 +8,15 @@ package com.example.justjava;
 
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -135,7 +138,16 @@ public class MainActivity extends AppCompatActivity {
  * Increment quantity (global variable for the number of cups).
  */
     public void increment(View view) {
-        quantity = quantity + 1;
+        if (quantity < 100)
+        {
+            quantity = quantity + 1;
+        }
+        else    /* Notify user with a toast */
+        {
+            Toast toast = Toast.makeText(getApplicationContext(), "You cannot order more than 100 cups.", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+            toast.show();
+        }
 
         displayQuantity(quantity);
     }
@@ -148,9 +160,15 @@ public class MainActivity extends AppCompatActivity {
  * Decrement quantity (global variable for the number of cups).
  */
     public void decrement(View view) {
-        if (quantity != 0)
+        if (quantity > 0)
         {
             quantity = quantity - 1;
+        }
+        else    /* Notify user with a toast */
+        {
+            Toast toast = Toast.makeText(getApplicationContext(), "You cannot order less than 1 cup.", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+            toast.show();
         }
 
         displayQuantity(quantity);
