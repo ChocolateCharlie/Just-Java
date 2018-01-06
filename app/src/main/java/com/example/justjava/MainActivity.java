@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
  * This method is called when the order button is clicked.
  * Display :
  *      - the customer's name
+ *      - if whipped cream must be added
+ *      - if chocolate must be added
  *      - the number of desired cups
  *      - the price
  *      - a thanking message
@@ -71,14 +73,17 @@ public class MainActivity extends AppCompatActivity {
  * @param price
  * @return a String with :
  *      - the customer's name
+ *      - if whipped cream must be added
+ *      - if chocolate must be added
  *      - the number of desired cups (quantity global variable)
  *      - the price
  *      - a thanking message
  */
     private String createOrderSummary (int price) {
-        CheckBox checkBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
 
-        return "Name : Kaptain Koffee\nHas whipped cream ? " + checkBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
+        return "Name : Kaptain Koffee\nAdd whipped cream ? " + whippedCreamCheckBox.isChecked() + "\nAdd chocolate ? " + chocolateCheckBox.isChecked() + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
     }
 
 /**
