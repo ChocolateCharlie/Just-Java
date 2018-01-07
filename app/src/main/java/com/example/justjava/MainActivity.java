@@ -1,7 +1,7 @@
 /**
  * MainActivity.java
  * By : ChocolateCharlie
- * Last Updates : 06 - 01 - 2018
+ * Last Updates : 07 - 01 - 2018
  */
 
 package com.example.justjava;
@@ -10,6 +10,7 @@ package com.example.justjava;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         String subject = "JustJava order for " + customersName.getText().toString();
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked(), calculatePrice(whippedCreamCheckBox.isChecked(), chocolateCheckBox.isChecked())));
 
