@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
 
-        String subject = "JustJava order for " + customersName.getText().toString();
+        String subject = getString(R.string.order_summary_email_subject, customersName.getText().toString());
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
@@ -118,7 +118,20 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary (boolean hasWhippedCream, boolean hasChocolate, int price) {
         EditText customersName = (EditText) findViewById(R.id.name_edit_text);
 
-        return "Name : " + customersName.getText().toString() + "\nAdd whipped cream ? " + hasWhippedCream + "\nAdd chocolate ? " + hasChocolate + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank you !";
+        /* Name */
+        String message = getString(R.string.order_summary_name, customersName.getText().toString()) + "\n";
+        /* Whipped cream */
+        message += getString(R.string.order_summary_whipped_cream, hasWhippedCream) + "\n";
+        /* Chocolate */
+        message += getString(R.string.order_summary_chocolate, hasChocolate) + "\n";
+        /* Quantity */
+        message += getString(R.string.order_summary_quantity, quantity) + "\n";
+        /* Total */
+        message += getString(R.string.order_summary_price, price) + "\n";
+        /* Thank you message */
+        message += getString(R.string.thank_you);
+
+        return message;
     }
 
 /**
@@ -130,17 +143,6 @@ public class MainActivity extends AppCompatActivity {
     private void displayQuantity(int quantity) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + quantity);
-    }
-
-/**
- * displayMessage
- * @param message
- *
- * This method displays the given text on the screen.
- */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
     }
 
 /**

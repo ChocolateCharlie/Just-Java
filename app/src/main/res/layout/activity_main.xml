@@ -2,7 +2,7 @@
 
 <!-- JUST JAVA LAYOUT -->
 <!-- By : ChocolateCharlie -->
-<!-- Last Updated : 06 - 01 - 2018 -->
+<!-- Last Updated : 07 - 01 - 2018 -->
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,14 +21,14 @@
     <!-- EditText -->
         <EditText
             android:id="@+id/name_edit_text"
-            android:hint="Name"
+            android:hint="@string/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapWords" />
 
     <!-- Toppings -->
         <TextView
-            android:text="Toppings"
+            android:text="@string/toppings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -38,7 +38,7 @@
     <!-- Whipped Cream Checkbox -->
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
-            android:text="Whipped Cream"
+            android:text="@string/whipped_cream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="24dp"
@@ -47,7 +47,7 @@
         <!-- Chocolate Checkbox -->
         <CheckBox
             android:id="@+id/chocolate_checkbox"
-            android:text="Chocolate"
+            android:text="@string/chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="24dp"
@@ -55,7 +55,7 @@
 
     <!-- Quantity -->
         <TextView
-            android:text="Quantity"
+            android:text="@string/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -78,7 +78,7 @@
     <!-- Quantity Number -->
             <TextView
                 android:id="@+id/quantity_text_view"
-                android:text="2"
+                android:text="@string/initial_quantity_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
@@ -96,31 +96,12 @@
 
         </LinearLayout>
 
-    <!-- Order Summary title -->
-        <TextView
-            android:text="Order Summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@android:color/darker_gray"
-            android:textAllCaps="true" />
-
-    <!-- Order Summary string -->
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:text="$10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
-
     <!-- Order -->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Order"
+            android:text="@string/order"
             android:textAllCaps="true"
             android:onClick="submitOrder"/>
 
