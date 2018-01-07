@@ -8,7 +8,7 @@ Making an App Interactive - Lesson 1 and 2
 
 Object-Oriented Programming Part 2
 
-NB : The app doesn't support Spanish like in the course, but French.
+*The app doesn't support Spanish like in the course, but French.*
 
 ### coffee-machine branch
 
